@@ -1,0 +1,25 @@
+[core]
+	editor = code --wait
+	conflictstyle = diff3
+[user]
+	name = Brian Dinh
+	email = me@miito.dev
+	signingkey = 3F19F59E18795347
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[color]
+	ui = auto
+[alias]
+	cleanup = "!f() { \
+			git checkout master; \
+			git fetch --all --prune; \
+			git prune; \
+			git gc --aggressive; \
+		}; f"
+[push]
+	autoSetupRemote = true

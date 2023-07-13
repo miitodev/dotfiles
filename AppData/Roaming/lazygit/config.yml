@@ -1,0 +1,60 @@
+disableStartupPopups: true
+notARepository: "skip"
+confirmOnQuit: true
+refresher:
+  refreshInterval: 60
+update:
+  method: "never"
+os:
+  editPreset: "vscode"
+gui:
+  scrollHeight: 4
+  scrollPastBottom: false
+  showCommandLog: false
+  showBottomLine: false
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - "#a6e3a1" # Green
+      - bold
+    inactiveBorderColor:
+      - "#cdd6f4" # Text
+    optionsTextColor:
+      - "#89b4fa" # Blue
+    selectedLineBgColor:
+      - "#313244" # Surface0
+    selectedRangeBgColor:
+      - "#313244" # Surface0
+    cherryPickedCommitBgColor:
+      - "#94e2d5" # Teal
+    cherryPickedCommitFgColor:
+      - "#89b4fa" # Blue
+    unstagedChangesColor:
+      - red # Red
+keybinding:
+  universal:
+    quit-alt1: "q"
+    optionMenu: "x"
+    openRecentRepos: "o"
+    executeCustomCommand: "X"
+    refresh: "<c-r>"
+    openFile: null
+  status:
+    recentRepos: "<space>"
+  files:
+    commitChanges: "C"
+    amendLastCommit: "a"
+    commitChangesWithEditor: "c"
+    toggleStagedAll: "<c-a>"
+  branches:
+    renameBranch: "r"
+    rebaseBranch: "R"
+    mergeIntoCurrentBranch: "m"
+  commits:
+    viewResetOptions: "<c-r>"
+    amendToCommit: "a"
+customCommands:
+  - key: "C"
+    command: "git cleanup"
+    context: "localBranches"
+    subprocess: true
